@@ -9,7 +9,6 @@
 import Todos from '@/components/Todos';
 import AddTodo from '@/components/AddTodo';
 import axios from 'axios';
-
 export default {
   name: 'Home',
   components: {
@@ -29,7 +28,6 @@ export default {
     },
     addTodo(newTodo) {
       const { title, completed} = newTodo;
-
       axios.post('https://jsonplaceholder.typicode.com/todos', 
       { title, completed})
       .then(response => this.todos = [...this.todos, response.data])
@@ -43,3 +41,4 @@ export default {
   }
 }
 </script>
+
