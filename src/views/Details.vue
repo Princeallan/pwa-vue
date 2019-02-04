@@ -2,7 +2,10 @@
     <v-container>
         <v-layout column>
             <v-flex>
-                <v-img :src="dog.url">
+                <v-img 
+                height="300"
+                width="80%"
+                :src="dog.url">
                 </v-img>
             </v-flex>
             <v-flex>
