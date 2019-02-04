@@ -31,7 +31,7 @@ export default {
 }
 .del {
     background-color: #ff0000;
-    padding: 5px 9px;
+    padding: 5px 11px;
     border-radius: 50%;
     float: right;
     color: #fff;

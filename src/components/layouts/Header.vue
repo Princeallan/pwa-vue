@@ -14,6 +14,7 @@
 
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat @click="navigateTo({name: 'home'})">Home</v-btn>
+      <v-btn flat @click="navigateTo({name: 'todos'})">Todos</v-btn>
       <v-btn flat @click="navigateTo({name: 'about'})">About</v-btn>
       <v-btn flat>Link Three</v-btn>
     </v-toolbar-items>
