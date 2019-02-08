@@ -2,9 +2,10 @@
   <v-container>
     <v-layout row wrap>
       <v-flex v-for="(dog, index) in dogs" :key="dog.id" s12 md4 xl3 pa-2>
-        <v-card @click="$router.push({name: 'details', params:{id:dog.id, dog:dogs[index] }})">
+        <v-card>
           <v-img 
-            height="100%" 
+            @click="$router.push({name: 'details', params:{id:dog.id, dogProp:dogs[index] }})"
+            height="100%"
             :src="dog.url"
             aspect-ratio="2.75">
             </v-img>
@@ -16,8 +17,7 @@
           </v-card-title>
 
           <v-card-actions>
-            <v-btn flat color="orange">Share</v-btn>
-            <v-btn flat color="orange">Explore</v-btn>
+            <v-btn flat color="orange" @click="$router.push({name: 'details', params:{id:dog.id, dogProp:dogs[index] }})">Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -38,7 +38,7 @@ export default {
     }
   },
   mounted() {
-    firebase.db.collection('dogs').orderBy('created_at').onSnapshot((snapShot) => {
+    firebase.db.collection('dogs').orderBy('created_at', 'desc').onSnapshot((snapShot) => {
       this.dogs=[];
       snapShot.forEach((dog) => {
         this.dogs.push({
