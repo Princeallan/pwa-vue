@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Todos from './views/TodosHome.vue'
+import Products from './components/products/ProductDetail.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/todos',
       name: 'todos',
       component: Todos
+    },
+    {
+      path: '/products',
+      name: 'products',
+      component: Products
     },
     {
       path: '/about',
